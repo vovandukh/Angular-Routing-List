@@ -1,0 +1,26 @@
+<header>
+    <h1>List of prohibited words:</h1>
+</header>
+<section>
+    <div class="wrapper">
+        <div class="wordsWrapper" style="display: flex;">
+            <h3>Bad words:</h3>
+            <h3 class="badWords" style="color: red; margin: 0 0 0 10px;" *ngFor="let words of arr">
+                <span>{{ words }}</span>
+            </h3>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control inputWords" placeholder="word here ..." style="width: 500px;"
+                [(ngModel)]="InputWords" [ngClass]="validInput">
+            <button type="button" class="btn btn-warning btnAdd" style="width: 80px;" (click)="addWords()">Add</button>
+            <button type="button" class="btn btn-danger btnReset" style="width: 80px;" (click)="reset()">Reset</button>
+        </div>
+        <div class="form-floating">
+            <textarea class="form-control inputTextarea" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px" [(ngModel)]="textarea" [ngClass]="validTextarea"></textarea>
+            <label for="floatingTextarea2">Text here...</label>
+        </div>
+        <button type="button" class="btn btn-success cenzor" style="width: 100%; margin: 20px 0 0 0;"
+            (click)="cenzor()">Cenzor</button>
+    </div>
+</section>

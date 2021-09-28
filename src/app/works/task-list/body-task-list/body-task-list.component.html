@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">Check</th>
+        <th scope="col">DONE/IN PROGRESS</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of arrTask; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.task }}</td>
+      <td><input type="checkbox" [checked] = "item.status" (change)= "taskStatus(item)"></td>
+      <td [ngStyle]="{'color': !item.status ? 'red' : 'green' }">{{ !item.status ? 'In PROGRESS' : 'Done' }}</td>
+      <td><button type="button" class="btn btn-warning" (click)=" editTask(item.id)">Edit</button></td>
+      <td><button type="button" class="btn btn-danger" [disabled] = "!item.status" (click)="deleteTask(item.id)">Delete</button></td>
+    </tr>
+       
+    </tbody>
+  </table>
+  <div class="editUser" style="height: 60px; background-color: gray;" [ngClass]="displayChanges">
+    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+      <input type="text" [(ngModel)]="editText">
+      <button type="button" class="btn btn-success" style="width: 80px; height: 40px; margin: 0 0 0 100px;" (click)="saveEditTask()">Save</button>
+    </div>
+  </div>

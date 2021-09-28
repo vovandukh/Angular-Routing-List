@@ -1,0 +1,12 @@
+span{
+    margin: 0 50px 0 10px;
+}
+.backWrapper{
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+.back{
+ color: red;
+ text-decoration: none;
+}

@@ -1,0 +1,22 @@
+header{
+    text-align: center;
+    border-block-end: 1px solid black;
+}
+
+section{
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper{
+    width: 700px;
+    height: 400px;
+}
+
+.inputWords{
+    width: 600px;
+    border-radius: 5px;
+    outline: none;
+}

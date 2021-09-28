@@ -1,0 +1,13 @@
+<header>
+    <h1>Plan Your Day</h1>
+    <h2>User Ivan Ivanov. Count of Task  {{ arrTask.length }} </h2>
+    <hr>
+    <div class="input-group mb-3">
+        <input [(ngModel)]="TaskValue" type="text" class="form-control" style="width: 70%;">
+        <button (click)="getTask()" type="button" class="btn btn-success" style="width: 30%;">Add</button>
+    </div>
+    <hr>
+</header>
+<main>
+    <app-body-task-list [arrTask] = "arrTask"></app-body-task-list>
+</main>
